@@ -1,0 +1,33 @@
+interface/class EdibleItem{
+   public void Prepare();//c++ pure virtual method
+}
+class VanilaBaseCream implements EdibleItem{ 
+     public void Prepare(){}
+}
+
+class Honey {
+
+}
+class Nuts{
+
+}
+class Sprinkles{
+}
+class Cereal{
+}
+
+main(){
+
+EdibleItem baseCream=new VanilaBaseCream();
+
+EdibleItem _iceCreamWithHoney=new Honey(baseCream);
+EdibleItem _iceCreamWithHoneyAndNuts=new Nuts(_iceCreamWithHoney);
+_iceCreamWithHoneyAndNuts.Prepare();
+
+
+EdibleItem vanilaIceCream=new VanilaBaseCream();
+EdibleItem _iceCreamWithSprinkles=new Sprinkles(baseCream);
+EdibleItem _iceCreamWithSprinklesAndCereal=new Cereal(_iceCreamWithSprinkles);
+_iceCreamWithSprinklesAndCereal.Prepare();
+
+}
