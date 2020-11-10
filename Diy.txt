@@ -1,0 +1,28 @@
+class/interface I{
+     
+     void Operation();
+}
+
+class A implements I{
+
+      public void Operation(){}
+}
+
+class B{
+public void Operation(){}
+}
+
+class C{
+public void Operation(){}
+}
+
+class D{
+public void Operation(){}
+}
+
+Main(){
+
+    I obj=new D(new C(new B (new A())));
+    obj.Operation(); // D.O , C.O,B.O,A.O
+
+}
